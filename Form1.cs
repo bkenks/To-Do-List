@@ -34,10 +34,25 @@ namespace To_Do_List
 
         private void btnToDo_Click(object sender, EventArgs e)
         {
+            // Highlight button when clicked
             pnlNav.Height = btnToDo.Height;
             pnlNav.Top = btnToDo.Top;
             pnlNav.Left = btnToDo.Left;
             btnToDo.BackColor = Color.FromArgb(46, 51, 73);
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            if (System.Windows.Forms.Application.MessageLoop)
+            {
+                // WinForms app
+                System.Windows.Forms.Application.Exit();
+            }
+            else
+            {
+                // Console app
+                System.Environment.Exit(1);
+            }
         }
     }
 }
